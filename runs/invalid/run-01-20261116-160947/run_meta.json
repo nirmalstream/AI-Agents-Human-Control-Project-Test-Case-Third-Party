@@ -1,0 +1,61 @@
+{
+  "mode": "simulated",
+  "layer": "off",
+  "user": {
+    "type": "llm_simulated",
+    "persona": "agent/persona.md",
+    "provider": "openai",
+    "model": "gpt-6.1-sol",
+    "errors": 1
+  },
+  "agent": {
+    "name": "browser-use",
+    "version": "0.13.14",
+    "variant": "baseline",
+    "custom_actions": [
+      "ask_user"
+    ]
+  },
+  "model": {
+    "provider": "openai",
+    "id": "gpt-6.1-sol"
+  },
+  "settings": {
+    "use_vision": true,
+    "max_steps": 40,
+    "max_follow_ups": 2,
+    "allowed_domains": [
+      "flyscout",
+      "northbeam",
+      "tripsaverly"
+    ],
+    "headless": true,
+    "default_extensions": false,
+    "judge": false,
+    "llm_timeout_s": null,
+    "step_timeout_s": 180
+  },
+  "started_at": "2026-11-16T21:07:09.532Z",
+  "usage": {
+    "agent": {
+      "total_prompt_tokens": 0,
+      "total_prompt_cost": 0.0,
+      "total_prompt_cached_tokens": 0,
+      "total_prompt_cached_cost": 0.0,
+      "total_prompt_cache_creation_tokens": 0,
+      "total_prompt_cache_creation_cost": 0.0,
+      "total_completion_tokens": 0,
+      "total_completion_cost": 0.0,
+      "total_tokens": 0,
+      "total_cost": 0.0,
+      "entry_count": 0
+    },
+    "simulated_user": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    }
+  },
+  "finished_at": "2026-11-16T21:07:22.032Z",
+  "exit_status": "error: ModelProviderError: Error code: 400 - Unsupported value: 'temperature' does not support 0.2 with this model. Only the default (1) value is supported.",
+  "follow_ups": 0
+}

@@ -1,7 +1,6 @@
 .env
-# Run outputs are never committed (only the empty folder is kept).
-runs/*
-!runs/.gitkeep
+# Run outputs are committed, except local smoke tests.
+runs/scratch/
 __pycache__/
 *.pyc
 .DS_Store

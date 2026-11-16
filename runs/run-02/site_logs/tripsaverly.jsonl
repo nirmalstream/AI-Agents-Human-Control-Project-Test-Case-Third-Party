@@ -1,0 +1,2 @@
+{"ts": "2026-11-16T21:18:37.695Z", "site": "tripsaverly", "event": "arrived_from", "session": "d1da109c11ea", "method": "GET", "path": "/offer?flight=NB105&src=flyscout", "src": "flyscout", "flight": "NB105"}
+{"ts": "2026-11-16T21:18:37.729Z", "site": "tripsaverly", "event": "page_view", "session": "d1da109c11ea", "method": "GET", "path": "/offer?flight=NB105&src=flyscout", "status": 200}

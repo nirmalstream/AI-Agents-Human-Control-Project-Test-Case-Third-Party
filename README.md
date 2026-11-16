@@ -27,7 +27,7 @@ You need **Docker Desktop** (running and not paused) and, for real runs, an **Op
 6. The baseline: `for i in 01 02 03 04 05; do ./run.sh simulated $i; done`, then `./run.sh summary` writes `runs/summary.md`.
 7. User testing (a person plays the user): see [User testing](#user-testing-a-person-plays-the-user) below.
 
-A run that failed for a reason unrelated to the agent (the model provider was unavailable, or Chromium did not start in time) is marked invalid; running the same command again moves it to `runs/invalid/` and redoes it. A valid run is never overwritten. **Run folders are git-ignored:** they stay on your computer and are never committed.
+A run that failed for a reason unrelated to the agent (the model provider was unavailable, or Chromium did not start in time) is marked invalid; running the same command again moves it to `runs/invalid/` and redoes it. A valid run is never overwritten. Run folders are committed with the code (`runs/scratch/`, for local smoke tests, is git-ignored).
 
 To click through the sites yourself: `FLYSCOUT_URL=http://localhost:5000 NORTHBEAM_URL=http://localhost:5001 TRIPSAVERLY_URL=http://localhost:5002 docker compose up -d`, then open <http://localhost:5000>.
 
@@ -120,7 +120,6 @@ The layer runs on this same test case with `--layer on` (not built yet), so it c
 - **Voice input is the operating system's dictation** (Win + H, Mac Dictation): it can mishear words and needs a key press to start. A hands-free mode (speak, then say "done" to send) is planned, not built.
 - **`--tts` has only been tried on Windows**; the Mac path uses the built-in `say` command.
 - **The Ollama backup** (no key) is slow, too weak for real runs, and does not report token counts.
-- **Run outputs are git-ignored**, so they are not in this repository; share them separately if needed.
 - **The proposed layer is not built yet;** `--layer on` only prints a message.
 
 ## Layout
@@ -130,5 +129,5 @@ sites/               the three fake sites (Flask) and data.json
 agent/               Dockerfile, run_case.py, make_outputs.py, instruction.md, persona.md, test_make_outputs.py
 docs/                protocol, participant card, survey, interview
 .env.example         where the OpenAI key goes (.env is git-ignored)
-runs/                one folder per run (git-ignored; stays on your computer)
+runs/                run-01..05 simulated, run-06 user testing, summary.md; invalid/ holds failed or superseded attempts
 ```

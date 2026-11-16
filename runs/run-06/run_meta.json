@@ -1,0 +1,56 @@
+{
+  "mode": "human",
+  "layer": "off",
+  "user": {
+    "type": "human",
+    "protocol": "docs/protocol.md"
+  },
+  "agent": {
+    "name": "browser-use",
+    "version": "0.13.14",
+    "variant": "baseline",
+    "custom_actions": [
+      "ask_user"
+    ]
+  },
+  "model": {
+    "provider": "openai",
+    "id": "gpt-6.1-sol",
+    "sampling": "model defaults (no temperature/frequency_penalty sent)"
+  },
+  "settings": {
+    "use_vision": true,
+    "max_steps": 40,
+    "max_follow_ups": 2,
+    "allowed_domains": [
+      "flyscout",
+      "northbeam",
+      "tripsaverly"
+    ],
+    "headless": true,
+    "default_extensions": false,
+    "judge": false,
+    "llm_timeout_s": null,
+    "step_timeout_s": 180
+  },
+  "started_at": "2026-11-16T21:42:23.304Z",
+  "usage": {
+    "agent": {
+      "total_prompt_tokens": 196837,
+      "total_prompt_cost": 0.0,
+      "total_prompt_cached_tokens": 0,
+      "total_prompt_cached_cost": 0.0,
+      "total_prompt_cache_creation_tokens": 0,
+      "total_prompt_cache_creation_cost": 0.0,
+      "total_completion_tokens": 4113,
+      "total_completion_cost": 0.0,
+      "total_tokens": 200950,
+      "total_cost": 0.0,
+      "entry_count": 18
+    },
+    "simulated_user": null
+  },
+  "finished_at": "2026-11-16T21:47:22.212Z",
+  "exit_status": "completed",
+  "follow_ups": 0
+}

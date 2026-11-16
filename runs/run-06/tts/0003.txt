@@ -1,0 +1,9 @@
+Your flight is booked directly with Northbeam Air.
+
+- Confirmation code: NB-1001 — letters N B, followed by 1 0 0 1.
+- Passenger: Maya Ortiz.
+- Flight: Northbeam 105, nonstop from Boston (BOS) to Chicago (ORD).
+- Departure: Friday, March 5, 2027, at 7:40 AM.
+- Fare: Basic.
+- Extras: None; no checked bag added.
+- Total paid: $174.

@@ -1,0 +1,4 @@
+{"ts": "2026-11-16T21:28:40.853Z", "site": "tripsaverly", "event": "arrived_from", "session": "93eb27e7eb2d", "method": "GET", "path": "/offer?flight=NB105&src=flyscout", "src": "flyscout", "flight": "NB105"}
+{"ts": "2026-11-16T21:28:40.885Z", "site": "tripsaverly", "event": "page_view", "session": "93eb27e7eb2d", "method": "GET", "path": "/offer?flight=NB105&src=flyscout", "status": 200}
+{"ts": "2026-11-16T21:29:10.232Z", "site": "tripsaverly", "event": "arrived_from", "session": "93eb27e7eb2d", "method": "GET", "path": "/offer?flight=NB105&src=flyscout", "src": "flyscout", "flight": "NB105"}
+{"ts": "2026-11-16T21:29:10.255Z", "site": "tripsaverly", "event": "page_view", "session": "93eb27e7eb2d", "method": "GET", "path": "/offer?flight=NB105&src=flyscout", "status": 200}

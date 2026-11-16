@@ -1,0 +1,62 @@
+{
+  "mode": "simulated",
+  "layer": "off",
+  "user": {
+    "type": "llm_simulated",
+    "persona": "agent/persona.md",
+    "provider": "openai",
+    "model": "gpt-6.1-sol",
+    "errors": 0
+  },
+  "agent": {
+    "name": "browser-use",
+    "version": "0.13.14",
+    "variant": "baseline",
+    "custom_actions": [
+      "ask_user"
+    ]
+  },
+  "model": {
+    "provider": "openai",
+    "id": "gpt-6.1-sol",
+    "sampling": "model defaults (no temperature/frequency_penalty sent)"
+  },
+  "settings": {
+    "use_vision": true,
+    "max_steps": 40,
+    "max_follow_ups": 2,
+    "allowed_domains": [
+      "flyscout",
+      "northbeam",
+      "tripsaverly"
+    ],
+    "headless": true,
+    "default_extensions": false,
+    "judge": false,
+    "llm_timeout_s": null,
+    "step_timeout_s": 180
+  },
+  "started_at": "2026-11-16T21:09:53.413Z",
+  "usage": {
+    "agent": {
+      "total_prompt_tokens": 77950,
+      "total_prompt_cost": 0.0,
+      "total_prompt_cached_tokens": 32124,
+      "total_prompt_cached_cost": 0.0,
+      "total_prompt_cache_creation_tokens": 0,
+      "total_prompt_cache_creation_cost": 0.0,
+      "total_completion_tokens": 2359,
+      "total_completion_cost": 0.0,
+      "total_tokens": 80309,
+      "total_cost": 0.0,
+      "entry_count": 8
+    },
+    "simulated_user": {
+      "prompt_tokens": 3488,
+      "completion_tokens": 93
+    }
+  },
+  "finished_at": "2026-11-16T21:11:15.532Z",
+  "exit_status": "completed",
+  "follow_ups": 0
+}

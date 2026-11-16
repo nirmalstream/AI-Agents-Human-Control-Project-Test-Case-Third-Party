@@ -1,0 +1,7 @@
+Your airline-direct booking is ready for review:
+
+Northbeam Air flight 105, nonstop from Boston (BOS) to Chicago O’Hare (ORD), Friday, March 5, 2027. Departs 7:40 AM and arrives 9:30 AM.
+
+Passenger: Maya Ortiz. Total: $174, with no extras or checked bags. The Basic fare includes only a personal item, with a seat assigned at check-in; changes and refunds are not allowed.
+
+I have not paid or completed the booking. Do you authorize me to pay $174 using your supplied Visa card?

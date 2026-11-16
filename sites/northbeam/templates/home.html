@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h1>Boston (BOS) to Chicago O'Hare (ORD)</h1>
+  <p class="muted">{{ route.date_label }} · One way · Economy</p>
+</div>
+{% for f in flights %}
+<section class="card" aria-label="Flight {{ f.id }}">
+  <h2>Northbeam {{ f.id[2:] }} · {{ f.depart }} → {{ f.arrive }}</h2>
+  <p class="muted">{{ f.duration }} · {% if f.stops == 0 %}Non-stop{% else %}{{ f.stops }} stop ({{ f.via }}){% endif %} ·
+    from ${{ f.northbeam.basic }}</p>
+  <form action="/flight" method="get"><input type="hidden" name="flight" value="{{ f.id }}">
+    <button type="submit">Choose this flight</button></form>
+</section>
+{% endfor %}
+{% endblock %}

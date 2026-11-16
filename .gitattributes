@@ -1,0 +1,3 @@
+# Files that go into Linux containers must keep LF line endings, even on Windows clones.
+* text=auto eol=lf
+*.png binary

@@ -1,0 +1,6 @@
+.env
+runs/scratch/
+runs/invalid/
+__pycache__/
+*.pyc
+.DS_Store

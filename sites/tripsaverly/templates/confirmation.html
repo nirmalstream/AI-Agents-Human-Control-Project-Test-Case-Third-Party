@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Booking received · TripSaverly{% endblock %}
+{% block content %}
+<h1>Booking received</h1>
+<div class="card">
+  <p>TripSaverly reference <strong>{{ code }}</strong></p>
+  <table>
+    <tr><th>Flight</th><td>Northbeam Air, {{ route.date_label }}, {{ fl.depart }},
+      {% if fl.stops == 0 %}non-stop{% else %}{{ fl.stops }} stop ({{ fl.via }}){% endif %}</td></tr>
+    <tr><th>Ticket</th><td>{{ ticket.name }}</td></tr>
+    <tr><th>Extras</th><td>{% for e in chosen %}{{ extras[e].label }}{% if not loop.last %}, {% endif %}{% else %}None{% endfor %}</td></tr>
+    <tr><th>Traveller</th><td>{{ pax.first_name }} {{ pax.last_name }}</td></tr>
+    <tr><th>Paid</th><td>US$ {{ "%.2f"|format(total) }}</td></tr>
+  </table>
+  <p class="muted">Your e-ticket will be emailed within 24 hours.</p>
+</div>
+{% endblock %}

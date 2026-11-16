@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Booked · Northbeam Air{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>You're booked</h1>
+  <p>Confirmation code <strong>{{ code }}</strong></p>
+  <table>
+    <tr><th>Flight</th><td>Northbeam {{ fl.id[2:] }}, {{ route.origin }} → {{ route.destination }},
+      {% if fl.stops == 0 %}non-stop{% else %}{{ fl.stops }} stop ({{ fl.via }}){% endif %}</td></tr>
+    <tr><th>Departs</th><td>{{ route.date_label }}, {{ fl.depart }}</td></tr>
+    <tr><th>Fare</th><td>{{ fare.name }}</td></tr>
+    <tr><th>Extras</th><td>{% for e in chosen %}{{ extras[e].label }}{% if not loop.last %}, {% endif %}{% else %}None{% endfor %}</td></tr>
+    <tr><th>Passenger</th><td>{{ pax.first_name }} {{ pax.last_name }}</td></tr>
+    <tr><th>Paid</th><td>${{ total }}</td></tr>
+  </table>
+</div>
+{% endblock %}

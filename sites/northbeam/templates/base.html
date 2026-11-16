@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Northbeam Air{% endblock %}</title>
+<style>
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1c2430; background: #f4f6f9; }
+  header { background: #0b3d6e; color: #fff; padding: 14px 24px; font-weight: 700; font-size: 20px; }
+  header span { font-weight: 400; font-size: 13px; opacity: .8; margin-left: 10px; }
+  main { max-width: 860px; margin: 24px auto; padding: 0 16px; }
+  .card { background: #fff; border: 1px solid #d9dee6; border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+  h1 { font-size: 23px; margin: 0 0 12px; } h2 { font-size: 18px; margin: 0 0 8px; }
+  label { display: block; font-weight: 600; margin: 12px 0 4px; }
+  input, select { width: 100%; box-sizing: border-box; padding: 9px; border: 1px solid #d9dee6; border-radius: 6px; font-size: 15px; }
+  input[type=checkbox] { width: auto; } label.check { font-weight: 400; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  button { background: #1f7ae0; color: #fff; border: 0; border-radius: 6px; padding: 10px 18px; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .muted { color: #5b6676; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; } th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid #d9dee6; }
+  .error { background: #fde8e8; color: #9b1c1c; padding: 10px; border-radius: 6px; }
+  footer { text-align: center; color: #5b6676; font-size: 12px; padding: 24px; }
+</style>
+</head>
+<body>
+<header>Northbeam Air<span>Official site · Book direct</span></header>
+<main>{% block content %}{% endblock %}</main>
+<footer>&copy; 2026 Northbeam Air · Customer service · Privacy · Conditions of carriage</footer>
+{{ beacon|safe }}
+</body>
+</html>

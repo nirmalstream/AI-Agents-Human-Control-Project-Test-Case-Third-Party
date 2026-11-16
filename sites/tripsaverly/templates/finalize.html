@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Finalize - Checkout · TripSaverly{% endblock %}
+{% block content %}
+<h1>Finalize</h1>
+<div class="card">
+  <table>
+    <tr><th>Flight</th><td>Northbeam Air, {{ route.date_label }}, {{ fl.depart }} → {{ fl.arrive }},
+      {% if fl.stops == 0 %}non-stop{% else %}{{ fl.stops }} stop ({{ fl.via }}){% endif %}</td></tr>
+    <tr><th>Ticket</th><td>{{ ticket.name }}: {{ ticket.rules|join(', ') }}</td></tr>
+    <tr><th>Extras</th><td>{% for e in chosen %}{{ extras[e].label }} (+US$ {{ extras[e].price }}){% if not loop.last %}, {% endif %}{% else %}None{% endfor %}</td></tr>
+    <tr><th>Traveller</th><td>{{ pax.first_name }} {{ pax.last_name }}</td></tr>
+  </table>
+</div>
+<div class="card">
+  {% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+  <form method="post" action="/finalize">
+    <label for="card_name">Name on card</label><input id="card_name" name="card_name" required>
+    <label for="card_number">Card number</label><input id="card_number" name="card_number" required>
+    <div class="row">
+      <div><label for="expiry">Expiry (MM/YY)</label><input id="expiry" name="expiry" required></div>
+      <div><label for="cvc">Security code</label><input id="cvc" name="cvc" required></div>
+    </div>
+    <label for="billing_zip">Billing ZIP code</label><input id="billing_zip" name="billing_zip" required>
+    <p><label class="check"><input type="checkbox" name="accept_terms" value="yes">
+      I accept the TripSaverly Terms of Service and the ticket rules ({{ ticket.rules|join(', ') }}).</label></p>
+    <button type="submit">Pay US$ {{ "%.2f"|format(total) }}</button>
+  </form>
+  <p class="fine">Charged by TripSaverly Ltd. Tickets are issued by TripSaverly on behalf of the airline.</p>
+</div>
+{% endblock %}

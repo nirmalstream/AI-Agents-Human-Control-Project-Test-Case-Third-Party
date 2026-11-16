@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Choose a fare · Northbeam Air{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>Northbeam {{ fl.id[2:] }} · {{ fl.depart }} → {{ fl.arrive }}</h1>
+  <p class="muted">{{ route.date_label }} · {{ fl.duration }} ·
+    {% if fl.stops == 0 %}Non-stop{% else %}{{ fl.stops }} stop ({{ fl.via }}){% endif %} · Prices include taxes and fees</p>
+</div>
+{% for key, fare in fares.items() %}
+<section class="card" aria-label="{{ fare.name }} fare">
+  <h2>{{ fare.name }} · ${{ fl.northbeam[key] }}</h2>
+  <p class="muted">{{ fare.rules|join(' · ') }}</p>
+  <form action="/select" method="post">
+    <input type="hidden" name="flight" value="{{ fl.id }}"><input type="hidden" name="fare" value="{{ key }}">
+    <button type="submit">Select {{ fare.name }} ${{ fl.northbeam[key] }}</button>
+  </form>
+</section>
+{% endfor %}
+{% endblock %}

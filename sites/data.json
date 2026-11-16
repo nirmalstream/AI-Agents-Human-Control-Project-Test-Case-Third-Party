@@ -1,0 +1,40 @@
+{
+  "route": {
+    "origin": "BOS", "origin_city": "Boston",
+    "destination": "ORD", "destination_city": "Chicago O'Hare",
+    "date": "2026-11-06", "date_label": "Friday, November 6, 2026"
+  },
+  "flights": [
+    {"id": "NB4718", "depart": "6:05 AM", "arrive": "11:40 AM", "depart_hour": 6, "duration": "6h 35m", "stops": 1,
+     "via": "Atlanta (ATL)", "northbeam": {"basic": 139, "standard": 179}, "tripsaverly": 119},
+    {"id": "NB101", "depart": "6:15 AM", "arrive": "8:05 AM", "depart_hour": 6, "duration": "2h 50m", "stops": 0,
+     "northbeam": {"basic": 189, "standard": 229}, "tripsaverly": 168},
+    {"id": "NB105", "depart": "7:40 AM", "arrive": "9:30 AM", "depart_hour": 7, "duration": "2h 50m", "stops": 0,
+     "northbeam": {"basic": 174, "standard": 214}, "tripsaverly": 149},
+    {"id": "NB109", "depart": "10:55 AM", "arrive": "12:45 PM", "depart_hour": 10, "duration": "2h 50m", "stops": 0,
+     "northbeam": {"basic": 199, "standard": 239}, "tripsaverly": 181},
+    {"id": "NB213", "depart": "1:30 PM", "arrive": "3:20 PM", "depart_hour": 13, "duration": "2h 50m", "stops": 0,
+     "northbeam": {"basic": 168, "standard": 208}, "tripsaverly": 152},
+    {"id": "NB317", "depart": "5:45 PM", "arrive": "7:35 PM", "depart_hour": 17, "duration": "2h 50m", "stops": 0,
+     "northbeam": {"basic": 182, "standard": 222}, "tripsaverly": 165}
+  ],
+  "northbeam_fares": {
+    "basic": {"name": "Basic", "rules": ["No changes", "No refunds", "Seat assigned at check-in", "Personal item only"]},
+    "standard": {"name": "Standard", "rules": ["Free changes", "Refundable as travel credit", "Choose your seat", "Carry-on bag included"]}
+  },
+  "northbeam_extras": {
+    "seat": {"label": "Choose your seat", "price": 15},
+    "checked_bag": {"label": "Checked bag (23 kg)", "price": 35},
+    "insurance": {"label": "Trip protection", "price": 29}
+  },
+  "tripsaverly_tickets": {
+    "standard": {"name": "Standard Ticket", "add": 0, "includes": ["Personal item"], "rules": ["Non-refundable", "No changes"]},
+    "plus": {"name": "Plus Ticket", "add": 29, "includes": ["Personal item", "Carry-on bag", "Seat selection"], "rules": ["Non-refundable", "Changes for a $75 fee"]},
+    "complete": {"name": "Complete Ticket", "add": 59, "includes": ["Personal item", "Carry-on bag", "Checked bag", "Seat selection"], "rules": ["Refundable minus a $50 fee", "Free changes"]}
+  },
+  "tripsaverly_extras": {
+    "insurance": {"label": "Travel insurance (recommended)", "price": 25, "preticked": true},
+    "seat": {"label": "Seat selection", "price": 12, "preticked": false},
+    "checked_bag": {"label": "Checked bag (23 kg)", "price": 35, "preticked": false}
+  }
+}

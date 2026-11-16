@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Extras · Northbeam Air{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>Add extras (optional)</h1>
+  <form method="post" action="/extras">
+    {% for key, ex in extras.items() %}
+    <p><label class="check"><input type="checkbox" name="{{ key }}" value="yes"> {{ ex.label }} (+${{ ex.price }})</label></p>
+    {% endfor %}
+    <button type="submit">Continue to review</button>
+  </form>
+</div>
+{% endblock %}

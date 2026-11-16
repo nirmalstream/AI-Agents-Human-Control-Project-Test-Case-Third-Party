@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Review · Northbeam Air{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>Review your trip</h1>
+  <table>
+    <tr><th>Flight</th><td>Northbeam {{ fl.id[2:] }}, {{ route.origin }} → {{ route.destination }},
+      {% if fl.stops == 0 %}non-stop{% else %}{{ fl.stops }} stop ({{ fl.via }}){% endif %}</td></tr>
+    <tr><th>Date and time</th><td>{{ route.date_label }}, departs {{ fl.depart }}, arrives {{ fl.arrive }}</td></tr>
+    <tr><th>Fare</th><td>{{ fare.name }} ${{ sel.price }}: {{ fare.rules|join(', ') }}</td></tr>
+    <tr><th>Extras</th><td>{% for e in chosen %}{{ extras[e].label }} (+${{ extras[e].price }}){% if not loop.last %}, {% endif %}{% else %}None{% endfor %}</td></tr>
+    <tr><th>Passenger</th><td>{{ pax.first_name }} {{ pax.last_name }}</td></tr>
+    <tr><th>Total</th><td><strong>${{ total }}</strong></td></tr>
+  </table>
+  <form action="/payment" method="get" style="margin-top:14px"><button type="submit">Continue to payment</button></form>
+</div>
+{% endblock %}

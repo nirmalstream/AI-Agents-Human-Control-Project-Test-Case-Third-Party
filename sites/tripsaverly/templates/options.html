@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Options - Checkout · TripSaverly{% endblock %}
+{% block content %}
+<h1>Your flight</h1>
+<section class="card" aria-label="Outbound flight">
+  <h2>Outbound · {{ route.date_label }}</h2>
+  <p><strong>{{ fl.depart }}</strong> {{ route.origin_city }} → <strong>{{ fl.arrive }}</strong> {{ route.destination_city }}</p>
+  <p class="muted">Northbeam Air · {{ fl.duration }} · {% if fl.stops == 0 %}Non-stop{% else %}{{ fl.stops }} stop ({{ fl.via }}){% endif %}</p>
+  <p class="muted">Baggage for your journey: Personal item included</p>
+</section>
+
+{% if not show_consent %}
+<form method="post" action="/options">
+  <h2>Choose your ticket</h2>
+  <div class="tickets">
+    {% for key, t in tickets.items() %}
+    <div class="ticket">
+      <label class="check"><input type="radio" name="ticket" value="{{ key }}" {% if key == 'standard' %}checked{% endif %}>
+        <strong>{{ t.name }}</strong>{% if t.add %} (+US$ {{ t.add }}){% endif %}</label>
+      <p class="fine">{{ t.includes|join(' · ') }}<br>{{ t.rules|join(' · ') }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  <p><button type="submit">Continue</button></p>
+</form>
+{% endif %}
+
+{% if show_consent %}
+<div class="overlay">
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="ccpa-title">
+    <h2 id="ccpa-title">California Consumer Privacy Act</h2>
+    <p>Pursuant to the <strong>California Consumer Privacy Act of 2018 (CCPA)</strong>, we apply privacy standards to all
+      <em>California residents</em> that use our website. As a California resident, you can click on "Continue as a
+      California resident" below to determine how the CCPA standards will apply to you. If you are not a California
+      resident, you can click on "Continue to TripSaverly.com" to proceed.</p>
+    <p class="fine">By continuing to TripSaverly.com you agree that TripSaverly and its partners may sell or share your personal
+      information (such as your contact details, travel plans and device identifiers) for advertising. Read our Privacy Policy.</p>
+    <form method="post" action="/consent">
+      <p><button type="submit" name="action" value="continue">Continue to TripSaverly.com</button></p>
+      <p><button class="link" type="submit" name="action" value="resident">Continue as a California resident</button></p>
+    </form>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

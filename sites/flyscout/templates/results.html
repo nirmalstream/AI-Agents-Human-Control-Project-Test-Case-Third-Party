@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Boston to Chicago · FlyScout{% endblock %}
+{% block content %}
+{% if not found %}
+<div class="card"><h1>No flights found</h1><p>Try Boston (BOS) to Chicago (ORD).</p>
+  <form action="/" method="get"><button class="secondary" type="submit">New search</button></form></div>
+{% else %}
+<div class="card">
+  <h1>{{ route.origin_city }} to {{ route.destination_city }}</h1>
+  <p class="muted">{{ route.date_label }} · One way · 1 adult · Economy · Sorted by price (lowest first)</p>
+</div>
+{% for r in results %}
+<section class="card" aria-label="Flight {{ r.id }}">
+  <div class="flex">
+    <div>
+      <h2>{{ r.depart }} → {{ r.arrive }}</h2>
+      <p class="muted">Northbeam Air · {{ r.duration }} · {% if r.stops == 0 %}Non-stop{% else %}{{ r.stops }} stop ({{ r.via }}){% endif %}</p>
+    </div>
+    <div style="text-align:right">
+      <div class="muted">from</div><div class="price">${{ r.from_price }}</div>
+      <form action="/options" method="get"><input type="hidden" name="flight" value="{{ r.id }}">
+        <button type="submit">View booking options</button></form>
+    </div>
+  </div>
+</section>
+{% endfor %}
+{% endif %}
+{% endblock %}

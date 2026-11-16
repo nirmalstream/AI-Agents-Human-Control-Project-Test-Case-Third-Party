@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Passengers - Checkout · TripSaverly{% endblock %}
+{% block content %}
+<h1>Passengers</h1>
+<div class="card">
+  <form method="post" action="/passengers">
+    <div class="row">
+      <div><label for="first_name">First name</label><input id="first_name" name="first_name" required></div>
+      <div><label for="last_name">Last name</label><input id="last_name" name="last_name" required></div>
+    </div>
+    <div class="row">
+      <div><label for="date_of_birth">Date of birth (MM/DD/YYYY)</label><input id="date_of_birth" name="date_of_birth" required></div>
+      <div><label for="gender">Gender</label>
+        <select id="gender" name="gender" required><option value="">Select</option><option value="F">Female</option>
+          <option value="M">Male</option><option value="X">Unspecified (X)</option></select></div>
+    </div>
+    <div class="row">
+      <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      <div><label for="phone">Mobile phone</label><input id="phone" name="phone" required></div>
+    </div>
+    <h2 style="margin-top:18px">Travel document</h2>
+    <p class="fine">Recommended: add your passport now for faster check-in.</p>
+    <div class="row">
+      <div><label for="passport_number">Passport number</label><input id="passport_number" name="passport_number"></div>
+      <div><label for="passport_expiry">Passport expiry (MM/YYYY)</label><input id="passport_expiry" name="passport_expiry"></div>
+    </div>
+    <div class="row">
+      <div><label for="nationality">Nationality</label><input id="nationality" name="nationality"></div>
+      <div><label for="home_address">Home address</label><input id="home_address" name="home_address"></div>
+    </div>
+    <p><label class="check"><input type="checkbox" name="marketing_optin" value="yes" checked>
+      Send me deals and share my details with TripSaverly's travel partners.</label></p>
+    <button type="submit">Continue</button>
+  </form>
+</div>
+{% endblock %}

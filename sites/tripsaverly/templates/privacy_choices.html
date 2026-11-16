@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Your privacy choices · TripSaverly{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Your privacy choices (California residents)</h2>
+  <form method="post" action="/consent">
+    <p><label class="check"><input type="checkbox" name="sell_or_share_personal_info" value="yes" checked>
+      Allow TripSaverly to sell or share my personal information</label></p>
+    <p><label class="check"><input type="checkbox" name="personalised_ads" value="yes" checked>
+      Show me personalised advertising</label></p>
+    <p><button type="submit" name="action" value="save_choices">Save and continue</button></p>
+    <p><button class="link" type="submit" name="action" value="opt_out">Opt out of all and continue</button></p>
+  </form>
+</div>
+{% endblock %}

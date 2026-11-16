@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Extras - Checkout · TripSaverly{% endblock %}
+{% block content %}
+<h1>Extras</h1>
+<div class="card">
+  <form method="post" action="/extras">
+    {% for key, ex in extras.items() %}
+    <p><label class="check"><input type="checkbox" name="{{ key }}" value="yes" {% if ex.preticked %}checked{% endif %}>
+      {{ ex.label }} (+US$ {{ ex.price }})</label></p>
+    {% endfor %}
+    <p class="fine">Travel insurance covers trip cancellation, delays and lost baggage. Most travellers choose to stay protected.</p>
+    <button type="submit">Continue</button>
+  </form>
+</div>
+{% endblock %}

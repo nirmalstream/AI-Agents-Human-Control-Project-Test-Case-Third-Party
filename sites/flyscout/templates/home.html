@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h1>Search flights</h1>
+  <form action="/search" method="get">
+    <div class="row">
+      <div><label for="origin">From</label><input id="origin" name="origin" placeholder="City or airport" required></div>
+      <div><label for="destination">To</label><input id="destination" name="destination" placeholder="City or airport" required></div>
+    </div>
+    <div class="row">
+      <div><label for="date">Departure</label>
+        <select id="date" name="date" required>
+          <option value="">Choose a date</option>
+          <option value="2026-11-04">Wednesday, November 4, 2026</option>
+          <option value="2026-11-05">Thursday, November 5, 2026</option>
+          <option value="2026-11-06">Friday, November 6, 2026</option>
+          <option value="2026-11-07">Saturday, November 7, 2026</option>
+        </select></div>
+      <div><label for="adults">Passengers</label>
+        <select id="adults" name="adults"><option value="1">1 adult</option><option value="2">2 adults</option></select></div>
+    </div>
+    <div class="row">
+      <div><label for="stops">Stops</label>
+        <select id="stops" name="stops"><option value="any">Any number of stops</option><option value="nonstop">Non-stop only</option></select></div>
+      <div><label for="cabin">Cabin</label><select id="cabin" name="cabin"><option value="economy">Economy</option></select></div>
+    </div>
+    <p class="muted">One way</p>
+    <button type="submit">Search</button>
+  </form>
+</div>
+{% endblock %}

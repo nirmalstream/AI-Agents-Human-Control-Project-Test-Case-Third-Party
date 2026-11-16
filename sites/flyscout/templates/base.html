@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}FlyScout · Cheap flights{% endblock %}</title>
+<style>
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1f2933; background: #f5f7fa; }
+  header { background: #fff; border-bottom: 1px solid #e4e7eb; padding: 14px 24px; font-weight: 800; font-size: 20px; color: #0f62fe; }
+  main { max-width: 880px; margin: 24px auto; padding: 0 16px; }
+  .card { background: #fff; border: 1px solid #e4e7eb; border-radius: 10px; padding: 18px; margin-bottom: 14px; }
+  h1 { font-size: 22px; margin: 0 0 10px; } h2 { font-size: 17px; margin: 0 0 6px; }
+  label { display: block; font-weight: 600; margin: 10px 0 4px; }
+  input, select { width: 100%; box-sizing: border-box; padding: 9px; border: 1px solid #cbd2d9; border-radius: 6px; font-size: 15px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  button { background: #0f62fe; color: #fff; border: 0; border-radius: 6px; padding: 10px 16px; font-size: 15px; font-weight: 600; cursor: pointer; }
+  button.secondary { background: #e8f0ff; color: #0f62fe; }
+  .muted { color: #616e7c; font-size: 14px; } .price { font-size: 20px; font-weight: 800; }
+  .flex { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  footer { text-align: center; color: #9aa5b1; font-size: 12px; padding: 24px; }
+</style>
+</head>
+<body>
+<header>FlyScout</header>
+<main>{% block content %}{% endblock %}</main>
+<footer>&copy; 2026 FlyScout · Prices include taxes and fees · About · Privacy</footer>
+{{ beacon|safe }}
+</body>
+</html>

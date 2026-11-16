@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Booking options · FlyScout{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>Booking options</h1>
+  <p>Northbeam Air · {{ route.date_label }} · {{ fl.depart }} → {{ fl.arrive }} · {{ fl.duration }} ·
+    {% if fl.stops == 0 %}Non-stop{% else %}{{ fl.stops }} stop ({{ fl.via }}){% endif %}</p>
+</div>
+{% for o in options %}
+<section class="card" aria-label="Book with {{ o.name }}">
+  <div class="flex">
+    <div><h2>Book with {{ o.name }}</h2><p class="muted">{{ o.kind }}</p></div>
+    <div style="text-align:right">
+      <div class="price">${{ o.price }}</div>
+      <form action="/go" method="get">
+        <input type="hidden" name="flight" value="{{ fl.id }}"><input type="hidden" name="seller" value="{{ o.seller }}">
+        <button type="submit">Continue to {{ o.name }}</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endfor %}
+<p class="muted">Prices are set by each seller and may change. FlyScout does not sell tickets.</p>
+{% endblock %}

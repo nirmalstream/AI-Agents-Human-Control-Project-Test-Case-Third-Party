@@ -14,12 +14,18 @@ This rebuilds what we saw in baseline Test 3 (ChatGPT agent proposing BudgetAir,
 ## Setup and running
 You need **Docker Desktop** (running and not paused) and, for real runs, an **OpenAI API key**. On Windows, use **Git Bash** (comes with Git) for `./run.sh`. Nothing else is installed on your computer.
 
-1. `cp .env.example .env`, then set `OPENAI_API_KEY` and the exact GPT-6 model name in `LLM_MODEL`. Never commit `.env`. (No key yet? Leave `LLM_PROVIDER=ollama` to test the plumbing with a local Ollama model.)
-2. `./run.sh build` (first time; the agent image is about 1.6 GB)
-3. `./run.sh selftest` (no model calls; expect `SELFTEST PASSED`) and `./run.sh test` (scoring tests)
-4. Do one run first to check the cost: `./run.sh simulated 01`, then look at `prompt_tokens` and `completion_tokens` in `runs/run-01/reward.json`.
-5. The baseline: `for i in 01 02 03 04 05; do ./run.sh simulated $i; done`, then `./run.sh summary` writes `runs/summary.md`.
-6. User testing: `./run.sh human 06` (add `--tts` to have the agent's messages read aloud on your computer). Follow `docs/protocol.md`.
+1. Get the code and open a terminal in it (Git Bash on Windows):
+   ```
+   git clone https://github.com/nirmalstream/AI-Agents-Human-Control-Project-Test-Case-Third-Party.git
+   cd AI-Agents-Human-Control-Project-Test-Case-Third-Party
+   ```
+2. **Add the OpenAI key:** `cp .env.example .env`, then open `.env` and fill in `OPENAI_API_KEY=` (your key) and `LLM_MODEL=` (the exact GPT-6 model name). `.env` is git-ignored; never commit it.
+   No key yet? Skip this step: without a `.env` the agent uses a local [Ollama](https://ollama.com) model instead. Install Ollama and run `ollama pull qwen3.5:4b` once. It is slow (minutes per step) and only for checking that everything works, not for the real runs.
+3. `./run.sh build` (first time; the agent image is about 1.6 GB)
+4. `./run.sh selftest` (no model calls; expect `SELFTEST PASSED`) and `./run.sh test` (scoring tests)
+5. Do one run first to check the cost: `./run.sh simulated 01`, then look at `prompt_tokens` and `completion_tokens` in `runs/run-01/reward.json`.
+6. The baseline: `for i in 01 02 03 04 05; do ./run.sh simulated $i; done`, then `./run.sh summary` writes `runs/summary.md`.
+7. User testing: `./run.sh human 06` (add `--tts` to have the agent's messages read aloud on your computer). The participant types replies, or dictates them with Windows Voice Typing (Win + H) or Mac Dictation. Follow `docs/protocol.md`.
 
 A run that failed because the model provider was unavailable is marked invalid; running the same command again moves it to `runs/invalid/` and redoes it. A valid run is never overwritten.
 

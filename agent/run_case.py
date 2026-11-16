@@ -69,7 +69,7 @@ def build_llm(provider, model):
         return ChatOpenAI(model=model), model
     if provider == "ollama":
         from browser_use import ChatOllama
-        model = model or "qwen3.5-studio"
+        model = model or "qwen3.5:4b"  # `ollama pull qwen3.5:4b`; num_ctx below gives it a large enough window
         return ChatOllama(model=model, host=os.environ.get("OLLAMA_HOST", "http://host.docker.internal:11434"),
                           ollama_options={"num_ctx": 32768}), model
     sys.exit(f"Unknown LLM_PROVIDER {provider!r} (use openai or ollama)")

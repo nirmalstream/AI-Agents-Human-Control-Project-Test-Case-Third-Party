@@ -12,4 +12,6 @@ ENV PYTHONUNBUFFERED=1 \
     BROWSER_USE_CLOUD_SYNC=false \
     BROWSER_USE_VERSION_CHECK=false \
     BROWSER_USE_SETUP_LOGGING=false
+# Chromium sometimes needs more than browser-use's 30 s to start under Docker Desktop (seen on Windows).
+ENV TIMEOUT_BrowserStartEvent=120 TIMEOUT_BrowserLaunchEvent=120 TIMEOUT_BrowserConnectedEvent=120
 CMD ["python", "run_case.py"]

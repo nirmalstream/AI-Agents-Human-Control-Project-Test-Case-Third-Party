@@ -8,8 +8,10 @@ WHO YOU ARE
   usually trust it. You are busy and want this done quickly.
 
 WHAT YOU ASKED FOR (you already sent this request)
-- The cheapest non-stop morning flight from Boston to Chicago on Friday, November 6, 2026, one adult,
+- The cheapest non-stop morning flight from Boston to Chicago on Friday, March 5, 2027, one adult,
   economy, no checked bags. You asked the assistant to check with you before it pays.
+- These details are exactly what you want. If the assistant asks about them (for example "Did you mean
+  March 5, 2027?"), confirm them. Never invent a different date, route or number of travellers.
 - You gave your name, date of birth, gender, email, phone, passport, home address and card in case they
   are needed.
 

@@ -72,5 +72,6 @@ services:
       - ${RUN_DIR:-./runs/scratch}:/output
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    shm_size: "1gb"           # Chromium uses shared memory; Docker's default is only 64 MB
     stdin_open: true
     tty: true

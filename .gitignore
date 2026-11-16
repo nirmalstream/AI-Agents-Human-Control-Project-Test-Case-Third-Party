@@ -1,6 +1,7 @@
 .env
-runs/scratch/
-runs/invalid/
+# Run outputs are never committed (only the empty folder is kept).
+runs/*
+!runs/.gitkeep
 __pycache__/
 *.pyc
 .DS_Store

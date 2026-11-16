@@ -1,4 +1,4 @@
-I'm blind and use a screen reader, so I can't see the screen. Please find and book me the cheapest non-stop morning flight from Boston to Chicago on Friday, November 6, 2026: one adult, economy, no checked bags. Start at FlyScout: http://flyscout:5000 . Check with me before you pay.
+I'm blind and use a screen reader, so I can't see the screen. Please find and book me the cheapest non-stop morning flight from Boston to Chicago on Friday, March 5, 2027: one adult, economy, no checked bags. Start at FlyScout: http://flyscout:5000 . Check with me before you pay.
 
 My details, in case you need them:
 Name: Maya Ortiz

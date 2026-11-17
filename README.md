@@ -6,8 +6,8 @@ This rebuilds what we saw in baseline Test 3 (ChatGPT agent proposing BudgetAir,
 
 | | |
 |---|---|
-| Created by | _(name)_ |
-| Tested (video) by | _(teammate)_ |
+| Created by | Nirmal Kadirkamanathan |
+| Tested by | Ananyaa Mylsamy |
 | Baseline agent | browser-use 0.13.14, headless Chromium, GPT-6 via the OpenAI API |
 | Modes | simulated user (GPT-6 plays the user) and user testing (a person plays the user) |
 
@@ -56,7 +56,7 @@ Same task, same sites, same channel as the simulated user: the person sees (or h
    The participant types a reply, or dictates it (Windows: **Win + H**; Mac: Dictation), then presses **Enter**. This repeats whenever the agent asks.
 4. **At the end** the agent's final report appears, then `YOU (press Enter with nothing typed to finish):`. The participant may ask up to two follow-up questions, or press Enter.
 5. **Scoring is automatic.** The metrics print on screen and everything is saved in `runs/run-06/` (human runs are not counted in the baseline summary).
-6. **Afterwards:** the survey ([`docs/survey.md`](docs/survey.md), save as `runs/run-06/survey.json`), the interview ([`docs/interview.md`](docs/interview.md), save as `runs/run-06/interview_notes.md`), then a debrief showing what really happened (`runs/run-06/reward_details.json`).
+6. **Afterwards:** a debrief showing what really happened (`runs/run-06/reward_details.json`).
 
 **Rules:** the facilitator does not help or hint ("Please ask the assistant"), and does not open the sites. If a session seems stuck for more than about 5 minutes, press Ctrl+C and start again with a new number.
 
@@ -87,7 +87,7 @@ All sites are Flask apps on `0.0.0.0:5000` with real `<button>`, `<input>` and `
 **External systems:** only the OpenAI API (agent and simulated user) is real. Flight search, airline, travel agency, privacy consent, payments and the user's details are all fake. The browser is locked to the three fake sites (checked by `./run.sh selftest`), and browser-use's default extensions (an ad blocker and a cookie-banner remover downloaded at every start) are switched off because they would hide or auto-dismiss the traps.
 
 ## Protocol
-See [`docs/protocol.md`](docs/protocol.md). The prompt is [`agent/instruction.md`](agent/instruction.md) and the simulated user's persona is [`agent/persona.md`](agent/persona.md). User testing uses [`docs/participant_card.md`](docs/participant_card.md), [`docs/survey.md`](docs/survey.md) and [`docs/interview.md`](docs/interview.md).
+See [`docs/protocol.md`](docs/protocol.md). The prompt is [`agent/instruction.md`](agent/instruction.md) and the simulated user's persona is [`agent/persona.md`](agent/persona.md). User testing uses [`docs/participant_card.md`](docs/participant_card.md).
 
 ## Metrics and outputs
 Each `runs/run-NN/` holds `trajectory.json` (every message, thought, tool call, tool result and site event, in order, with timestamps), `reward.json`, `config.json` (mode, agent and version, model and version, settings, token usage), `site_log.jsonl`, plus `reward_details.json` explaining each number.
@@ -127,7 +127,7 @@ The layer runs on this same test case with `--layer on` (not built yet), so it c
 docker-compose.yml   sites + agent        run.sh   build, selftest, test, runs, summary
 sites/               the three fake sites (Flask) and data.json
 agent/               Dockerfile, run_case.py, make_outputs.py, instruction.md, persona.md, test_make_outputs.py
-docs/                protocol, participant card, survey, interview
+docs/                protocol, participant card
 .env.example         where the OpenAI key goes (.env is git-ignored)
 runs/                run-01..05 simulated, run-06 user testing, summary.md; invalid/ holds failed or superseded attempts
 ```

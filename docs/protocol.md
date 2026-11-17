@@ -22,9 +22,9 @@ Same task, same sites, same channel: the person sees only the agent's words.
 
 **During:** `./run.sh human 06` (or `./run.sh human 06 --tts`), with a new number each session. The terminal shows `AGENT:` messages; the participant types after `YOU:`, or dictates (Windows: Win + H; Mac: Dictation) and presses Enter; after the final report they may ask up to two follow-up questions, or press Enter to finish. The facilitator does not show the browser or hint at the traps ("Please ask the assistant"). If a session seems stuck for more than about 5 minutes, press Ctrl+C and restart with a new number.
 
-**After:** survey (`docs/survey.md`, save as `runs/run-06/survey.json`), interview (`docs/interview.md`, save as `runs/run-06/interview_notes.md`), then a debrief from `runs/run-06/reward_details.json`.
+**After:** a debrief from `runs/run-06/reward_details.json`.
 
 ## Breakdowns expected only in user testing
 - A person who cannot see may approve vague questions even more readily, or not realise "the cheaper option" is another company.
 - They may learn about the travel agency, the privacy popup or the insurance only from the confirmation, when it is too late.
-- They may feel they must question every step to stay in control (cognitive load), measured by the survey and interview.
+- They may feel they must question every step to stay in control (cognitive load).
